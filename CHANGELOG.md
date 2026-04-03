@@ -1,5 +1,15 @@
 # Changelog
 
+
+## 0.3.0 - 2026-04-03
+
+### Changed
+
+- Implement the function Convert-PxToEm
+- Include in the README.md the section, Requirement to be allow to run the script
+- Include in the README.md the section, Example to explain how to use the script 
+
+
 ## 0.2.1 - 2026-04-03
 
 ### Fixed
