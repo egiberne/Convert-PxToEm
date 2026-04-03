@@ -8,3 +8,6 @@ Convert-PxtoEm is a PowerShell script that helps to adjust a **pixel** value int
 - Script with variables and paramaters
 - Script with advanced features
 - Script module
+
+
+[![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
