@@ -11,9 +11,9 @@ function Convert-PxToEm{
     .PARAMETER PixelValue
     Pixel Value to convert.
     .INPUTS
-    None. You can't pipe objects to Convert-PxToEm.
+    System.Int32. You can pipe integer to Convert-PxToEm, to set the pixel value.
     .OUTPUTS
-    System.String . Convert-PxToEm returns a string that provide result of the conversion.
+    System.String. Convert-PxToEm returns a string that provide result of the conversion.
     .EXAMPLE
     PS> Convert-PxToEm -FontSize 16 -PixelValue 32
     32 px is equivalent to 0.5 em.
@@ -22,15 +22,24 @@ function Convert-PxToEm{
     #>
 
     param(
+        [PSDefaultValue(help= '16px is the default value')]    
         [int] $FontSize = 16,
         [int] $PixelValue
     )
 
-    
-        Write-Debug $_
-        $ratio = $FontSize/$PixelValue
-        $output = "$PixelValue px is equivalent to $ratio em."
-        return  $Output
+    process{
+        if ($PSItem){
+            $PixelValue = $_
+            $ratio = $FontSize/$PixelValue
+            $output = "$PixelValue px is equivalent to $ratio em."
+            return  $Output
+        } else {
+            $ratio = $FontSize/$PixelValue
+            $output = "$PixelValue px is equivalent to $ratio em."
+            return  $Output
+        }
+
+    }
     
  
 }

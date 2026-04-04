@@ -1,8 +1,16 @@
 # Changelog
 
+
+## 0.6.0 - 2026-04-04
+### Added
+Implement the pipeline to assign pixel value to yhe function by pipping
+
+### Changed
+Update the roadmap in the README to detailed the features implemented
+
 ## 0.5.0 - 2026-04-04
 ### Change
-Replace the `Write-Host` in the function with `return` keyword to have a `String` provided by the function
+Replace the `Write-Host` in the `return` keyword to assign a `String` value to a variable
 
 
 ## 0.4.1 - 2026-04-03
