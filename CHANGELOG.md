@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-04-03
+### Fixed
+- Correct the script with appropriate comment as know as Comment-Base Help
+- Correct the misspelled words in the README.md
+
 ## 0.4.0 - 2026-04-03
 ### Changed
 - Update the README.md with the new badge for Visual Studio Code
@@ -7,7 +12,7 @@
 - Update the README.md with Output sections
 
 ### Fixed
-- Correct the misspelled word in the README.md
+- Correct the misspelled words in the README.md
 
 
 ## 0.3.0 - 2026-04-03

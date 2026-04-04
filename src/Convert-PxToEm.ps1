@@ -1,10 +1,30 @@
 # 4. Script with advanced functions
 
-<--!
-.
--->
+<#
+.SYNOPSIS 
+Script with advanced function features to convert pixel to em.
+#>
 
 function Convert-PxToEm{
+    <#
+    .SYNOPSIS 
+    Convert pixel to em.
+    .DESCRIPTION 
+    The Convert-PxToEm function helps to adjust a **pixel** value into equivalent **em** value, based on the default font size of an element.
+    .PARAMETER FontSize
+    Default font-size of the element.
+    .PARAMETER PixelValue
+    Pixel Value to convert.
+    .INPUTS
+    None. You can't pipe objects to Convert-PxToEm.
+    .OUTPUTS
+    None. You can't return objects for Convert-PxToEm.
+    .EXAMPLE
+    PS> Convert-PxToEm -FontSize 16 -PixelValue 32
+    32 px is equivalent to 0.5 em.
+    .LINK
+    Online version: https://github.com/egiberne/Convert-PxToEm
+    #>
 
     param(
         [int] $FontSize,
@@ -18,7 +38,7 @@ function Convert-PxToEm{
     Write-Host  $Output
 }
 
-Convert-PxToEm -FontSize 16 -PixelValue 32
+# Convert-PxToEm -FontSize 16 -PixelValue 32
 
 # # 3. Script with simple function
 

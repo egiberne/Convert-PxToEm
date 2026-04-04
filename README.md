@@ -1,14 +1,14 @@
 # Convert-PxToEm
 
-Convert-PxToEm is a PowerShell script that helps to adjust a **pixel** value into equivalent **em** value, based on the default font size of a element.
+Convert-PxToEm is a PowerShell script that helps to adjust a **pixel** value into equivalent **em** value, based on the default font size of an element.
  
 ## Roadmap
 
 1. Script with one-liner commands
 2. Script with variables and parameters
-3. Script with simple functions
-4. Script with advanced functions
-5. Script module
+3. Script with simple function features
+4. Script with advanced function features
+5. Script module 
 
 > [!IMPORTANT]
 > Must set the PowerShell Execution Policy at least to **Unrestricted** to run the script.
@@ -44,7 +44,7 @@ Function        Convert-PxToEm
 Type  the following command:
 ```PowerShell
 
-PS C:\temp\> Convert-PxToEm -FontSize 16 -PixelValue 32
+Convert-PxToEm -FontSize 16 -PixelValue 32
 
 ```
 
