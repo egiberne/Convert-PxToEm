@@ -38,32 +38,49 @@ function Convert-PxToEm{
 
     [CmdletBinding()]
     param(
-        [PSDefaultValue(help= '16px is the default value')]    
-         $FontSize = 16,
-         $PixelValue
+        [Parameter(Position = 0)]
+        #[ValidateNotNullOrEmpty]
+        [ValidateRange(1, [int]::MaxValue)]
+        [PSDefaultValue(Help= 'Defaults to 16px. Standard browser font size.')]    
+        [int]$FontSize = 16,
+
+        [Parameter(
+            ValueFromPipeline, 
+            ValueFromPipelineByPropertyName, 
+            Mandatory)]
+        [ValidateRange(1, [int]::MaxValue)]
+        [int]$PixelValue
     )
     begin{
-         $PxToEm = [pscustomobject]@{
-            "DefaultPixel"=$FontSize
-            "TargetedPixel"=''
-            "Ratio"=''
-         }       
-        
 
     }
 
     process{
-        if ($PSItem){
+
+        $PxToEm = [PSCustomObject]@{
+            "DefaultPixel"=''
+            "TargetedPixel"=''
+            "Ratio"=''
+        }
+
+
+        if ($PSItem){ write-host "using pipeline"
+            $PxToEm.DefaultPixel = $FontSize
             $PxToEm.TargetedPixel = $_
             $PxToEm.Ratio = $FontSize/ $_
-            $PxToEm | Add-Member -MemberType ScriptProperty -Name "Result" -Value {"$($this.Pixel)px:$($this.Ratio)em"} -Force
+            $PxToEm | Add-Member -MemberType ScriptProperty -Name "Compute" -Value {"$($this.DefaultPixel)px/$($this.TargetedPixel) = $($this.Ratio) em"} -Force
             return  $PxToEm
-        } else {
+        } else {write-host "not using pipeline"
+            $PxToEm.DefaultPixel = $FontSize
             $PxToEm.TargetedPixel=$PixelValue
             $PxToEm.Ratio =  $FontSize/ $PixelValue
-            $PxToEm | Add-Member -MemberType ScriptProperty -Name "Result" -Value {"$($this.Pixel)px:$($this.Ratio)em"} -Force            
+            $PxToEm | Add-Member -MemberType ScriptProperty -Name "Compute" -Value {"$($this.DefaultPixel)px/$($this.TargetedPixel) = $($this.Ratio) em"} -Force            
             return  $PxToEm
         }
+
+    }
+
+    end{
 
     }
     

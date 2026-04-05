@@ -1,11 +1,22 @@
 # Changelog
 
+## 0.10.0 - 2026-04-04
+### Add
+- Support parameters validation with the statement `ValidateRange`
+
+## 0.9.0 - 2026-04-04
+### Changed
+- Implement `CmdletBinding` with the keyword `ValueFromPipeline` for $PixelValue assign through the pipeline
+- Implement `CmdletBinding` with the keyword `Mandatory` for $PixelValue as it is required
+- Replace the ordered list in the roadmap section Script module with unordered list
+- Refactor the move to `PSCustomObject` to the section `process`
+
 ## 0.8.0 - 2026-04-04
 ### Added
 Implement Cmdlet with using the keyword CmdletBinding
 ### Changed
-Remove the type of the parameter `-FontSize` and `-PixelValue` to implement splatting afterwards
-Rephrase the content of the roadmap to be more specific
+- Remove the type of the parameter `-FontSize` and `-PixelValue` to implement splatting afterwards
+- Rephrase the content of the roadmap to be more specific
 
 ## 0.7.0 - 2026-04-04
 ### Added
